@@ -10,6 +10,11 @@
     <nav>
         <li><a href="/">Home</a></li>
         <li><a href="/sign-up">Sign-up</a></li>
+        <li><a href="/admin">Login</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="/admin/logout/">Logout</a></li>
+        {% endif %}
+        <li><a href="/stopwatch">Stopwatch</a></li>
     </nav>
     <div id="content">
         {% block content %}{% endblock %}
@@ -47,6 +52,10 @@
             color: #fff;
             background-color: #5cb85c;
             border-color: #4cae4c;
+        }
+
+        nav li {
+            padding: 10px;
         }
     </style>
 </body>

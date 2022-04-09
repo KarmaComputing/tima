@@ -19,3 +19,5 @@ Run
 . venv/bin/activate
 python src/tima/manage.py runserver
 ```
+
+Visit: http://127.0.0.1:8000/
