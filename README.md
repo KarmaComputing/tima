@@ -16,6 +16,6 @@ python src/tima/manage.py createsuperuser
 
 Run
 ```
-python src/tima/manage.py runserver
 . venv/bin/activate
+python src/tima/manage.py runserver
 ```
