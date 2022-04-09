@@ -3,7 +3,44 @@
 {% block content %}
 
 <h1>Stopwatch</h1>
-<button>Start</button>
-<button>Stop</button>
+Minutes <p id="minutesElapsed"></p>
+Seconds <p id="secondsElapsed"></p>
+
+Clock <p id="time"></p>
+
+
+<button onclick="startTimer()">Start Timer</button>
+<button onclick="stopTimer()">Stop timer</button>
+
+<script>
+
+var secondsElapsed = 0;
+
+function startTimer() {
+  stopTimer();
+  secondsElapsed = -1;
+  let intervalID = setInterval(Timer, 1000);
+  localStorage.setItem("intervalID", intervalID);
+}
+
+function stopTimer() {
+  let intervalID = localStorage.getItem("intervalID");
+  clearInterval(intervalID);
+}
+
+function Timer() {
+  // Increase secondsElapsed
+  secondsElapsed++;
+
+  minutesElapsed = parseInt(secondsElapsed/60)
+
+  // Show elapsed
+  document.getElementById("secondsElapsed").innerHTML = secondsElapsed;
+  document.getElementById("minutesElapsed").innerHTML = minutesElapsed;
+
+  const d = new Date();
+  document.getElementById("time").innerHTML = d.toLocaleTimeString();
+}
+</script>
 
 {% endblock %}
