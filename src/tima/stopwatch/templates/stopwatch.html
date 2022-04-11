@@ -12,6 +12,9 @@ Clock <p id="time"></p>
 <button onclick="startTimer()">Start Timer</button>
 <button onclick="stopTimer()">Stop timer</button>
 
+<br />
+<img src="http://belarr.com/bakercat/bakercat.gif" id="bakercat" style="display:none;padding:15px;" />
+
 <script>
 
 var secondsElapsed = 0;
@@ -21,11 +24,13 @@ function startTimer() {
   secondsElapsed = -1;
   let intervalID = setInterval(Timer, 1000);
   localStorage.setItem("intervalID", intervalID);
+  document.getElementById("bakercat").style.display = "block";
 }
 
 function stopTimer() {
   let intervalID = localStorage.getItem("intervalID");
   clearInterval(intervalID);
+  document.getElementById("bakercat").style.display = "none";
 }
 
 function Timer() {

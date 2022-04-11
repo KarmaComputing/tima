@@ -12,7 +12,7 @@
         <li><a href="/sign-up">Sign-up</a></li>
         <li><a href="/admin">Login</a></li>
         {% if user.is_authenticated %}
-        <li><a href="/admin/logout/">Logout</a></li>
+        <li><a href="/admin/logout/">Logout</a> ({{ user.username }})</li>
         {% endif %}
         <li><a href="/stopwatch">Stopwatch</a></li>
     </nav>
