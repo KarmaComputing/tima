@@ -6,7 +6,9 @@
 
 <h1>SaaS Stopwatch</h1>
 <p>Track billable time for your SaaS projects.</p>
-
+{% if user.is_authenticated %}
+<a href="stopwatch" class="btn btn-success">Stopwatch</a>
+{% else %}
 <a href="sign-up" class="btn btn-success">Sign Up Now</a>
-
+{% endif %}
 {% endblock %}
